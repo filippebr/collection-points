@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
-import { View, ImageBackground, Text, Image, StyleSheet, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { 
+  View, 
+  ImageBackground, 
+  Text, 
+  Image, 
+  StyleSheet, 
+  TextInput, 
+  KeyboardAvoidingView, 
+  Platform 
+} from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
+  const navigation = useNavigation();
+  
   const [uf, setUf] = useState('');
   const [city, setCity] = useState('');
-
-  const navigation = useNavigation();
 
   function handleNavigateToPoints() {
     navigation.navigate('Points', {
@@ -20,8 +29,8 @@ const Home = () => {
   return (
     <KeyboardAvoidingView 
       style={{ flex: 1 }} 
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined
-    }>
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
       <ImageBackground 
         source={require('../../assets/home-background.png')} 
         style={styles.container}
@@ -30,8 +39,12 @@ const Home = () => {
         <View style={styles.main}>
           <Image source={require('../../assets/logo.png')} />
           <View>
-            <Text style={styles.title}>Seu marketplace de coleta de resíduos</Text>
-            <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</Text>
+            <Text style={styles.title}>
+              Seu marketplace de coleta de resíduos
+            </Text>
+            <Text style={styles.description}>
+              Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente
+            </Text>
           </View>
         </View>
 
@@ -98,9 +111,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
 
-  footer: {
-
-  },
+  footer: {},
 
   select: {},
 
@@ -138,7 +149,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontFamily: 'Roboto_500Medium',
     fontSize: 16,
-  }
+  },
 });
 
 export default Home;
