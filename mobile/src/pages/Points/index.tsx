@@ -54,7 +54,7 @@ const Points = () => {
       const { status } = await Location.requestPermissionsAsync();
 
       if (status !== 'granted') {
-        Alert.alert('Oooops...', 'Precisamos de sua permissão para obter a localização.');
+        Alert.alert('Oooops...', 'Necessário sua permissão para a localização.');
         return;
       }
 

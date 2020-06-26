@@ -84,7 +84,7 @@ const Detail = () => {
           }} 
         />
 
-        <Text style={styles.pointName}>Mercadão do João</Text>
+        <Text style={styles.pointName}>{data.point.name}</Text>
         <Text style={styles.pointItems}>
           {data.items.map(item => item.title).join(', ')}
         </Text>
